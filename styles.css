@@ -1,0 +1,30 @@
+.squares {
+    border-style: solid;
+    border-color: black;
+    border-width: 0.05cm;
+    background-color: rgb(184, 203, 255);
+    height: 1cm;
+    width: 1cm;
+    display: flex;
+    flex-shrink: 0;
+    
+}
+
+.squares:hover{
+    background-color: rgb(61, 61, 61);
+
+}
+
+.container {
+    display: flex;
+    width: 20cm;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+body{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
