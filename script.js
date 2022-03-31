@@ -1,6 +1,15 @@
-window.confirm("Welcome to my Etch a Sketch . Hover your mouse over the blue tiles to make a sketch");
-let tilesSize =  window.prompt("Select from 10-50px the pen size")
-let sketchpadSize = window.prompt("Select from 100-1000px the size of your sketchpad")
+window.confirm("Welcome to my Etch a Sketch . Click and Drag your mouse over the blue tiles to make a sketch");
+
+
+function generate(){
+     tilesSize = document.getElementById("penSize").value
+     sketchpadSize = document.getElementById("sketchpadSize").value
+    tilegenerator()
+}
+
+
+//let tilesSize =  window.prompt("Select from 10-50px the pen size")
+//let sketchpadSize = window.prompt("Select from 100-1000px the size of your sketchpad")
 
 function tilegenerator(){
 
@@ -14,12 +23,7 @@ for (let a = 0; a < numofsquares; a++){
     addHandertoItem(cloned);
     };
 individualsquare.remove()
-
-
-
 }
-
-
 
 
     
@@ -39,71 +43,66 @@ let addHandertoItem = function(child){
     });
 
     let ismousedown = false;
-    let ismousemove = false
+    let ismousemove = false;
 
     document.addEventListener("mousedown", function(){
         ismousedown = true;
     });
-
     document.addEventListener("mousemove", function(){
         ismousemove = true;
     });
-
     document.addEventListener("mouseup", function(){
         ismousedown = false;
     });
-    const div = document.querySelector('div')
-    div.addEventListener("dragstart", function(event){
-        event.preventDefault()
+
+    
+    child.addEventListener("mouseover", mousedownEvent)
+        function mousedownEvent(){
+           if (ismousedown == true && ismousemove == true){
+            child.style.backgroundColor = "#3d3d3d"}
+           }
+        const hoverbutton = document.querySelector("#Hover");
+        hoverbutton.addEventListener("click", function(){
+            child.removeEventListener("mouseover", mousedownEvent) 
+        });
+        
+   
+
+
+    hoverbutton.addEventListener("click", function(){
+        child.addEventListener("mouseover", mouseoverEvent) 
+            function mouseoverEvent(){
+                if (ismousedown == false && ismousemove == true){
+                child.style.backgroundColor = "#3d3d3d"
+                };
+            };
+    const mousedownbutton = document.querySelector("#Mousedown");
+    mousedownbutton.addEventListener("click", function(){
+        child.removeEventListener("mouseover", mouseoverEvent)
+        });
+    
     });
 
-    child.addEventListener("mouseover", function() {
-        if (ismousedown == true && ismousemove == true){
-        child.style.backgroundColor = "#3d3d3d"
-        }
+    const mousedownbutton = document.querySelector("#Mousedown");
+    mousedownbutton.addEventListener("click", function() {
+        child.addEventListener("mouseover", mousedownEvent) 
+        function mousedownEvent(){
+            if (ismousedown == true && ismousemove == true){
+            child.style.backgroundColor = "#3d3d3d"}
+            }
+            const hoverbutton = document.querySelector("#Hover");
+            hoverbutton.addEventListener("click", function(){
+                child.removeEventListener("mouseover", mousedownEvent) 
+            });
+    });
 
-});
-
-
-
-     
-const mousedownbutton = document.querySelector("#Mousedown");
-mousedownbutton.addEventListener("click", event => {
-    child.removeEventListener("mouseover", sketch(), true)
-    child.addEventListener("mousedown", sketch())
-        
-});
+    
 
 
 };
 
-tilegenerator();
+//tilegenerator();
     
-    //const brushSizeDecreaser = document.querySelector("#smallerBrushSize");
-    //brushSizeDecreaser.addEventListener('click', function(event){
-     //   child.style.backgroundColor = "#b8cbff";
-    //child.style.width = "100px";
-    //child.style.height = "100px";
-    //});
-     
-    
-
-
-
-    
-    //   const resetbutton = document.querySelector("#resetbutton");
- //   resetbutton.addEventListener('click', event =>{ 
-//        cloned.setAttribute("style","background-color: #b8cbff");
-//    }); 
-    
-    
-
-
-//    const brushSizeDecreaser = document.querySelector("#smallerBrushSize");
-//    const cloned = document.querySelector(".squares")
-//    brushSizeDecreaser.addEventListener('click',event =>{
-//        cloned.setAttribute("style","width: 100px; height: 100px");
-//    });
 
 
 
