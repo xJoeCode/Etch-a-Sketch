@@ -14,14 +14,10 @@ function generate(){
 }
 
 
-//let tilesSize =  window.prompt("Select from 10-50px the pen size")
-//let sketchpadSize = window.prompt("Select from 100-1000px the size of your sketchpad")
-
 function tilegenerator(){
 let divisibleSketchpadSize = Math.round(sketchpadSize/tilesSize) * tilesSize
 let numofsquares = Math.pow((divisibleSketchpadSize /tilesSize), 2);
 document.getElementsByClassName("container")[0].style.width = divisibleSketchpadSize + "px";
-console.log(divisibleSketchpadSize)
 const container = document.querySelector(".container");
 const individualsquare = document.createElement("div");
 individualsquare.classList.add("squares");
@@ -119,7 +115,7 @@ let addHandertoItem = function(child){
 
 };
 
-//tilegenerator();
+
     
 
 
