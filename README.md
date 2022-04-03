@@ -3,8 +3,9 @@ https://xjoecode.github.io/Etch-a-Sketch/
 
 This is my version of the Etch-a-Sketch project from the Odin Project. https://www.theodinproject.com/lessons/foundations-etch-a-sketch
 
-It has inputs to generate the size and colors of the sketchpad as well as the pen. 
-By holding down and dragging across the sketchpad, users can do a rough sketch.
+It has inputs to generate the size and colors of the sketchpad as well as the pen/tiles as many times as they want.
+By holding down and dragging across the sketchpad, users can do a sketch. It works by changing the background color of the tiles.
+There are buttons to reset the sketchpad as well as options to mouse over instead of dragging.
 
 To build the sketchpad itself, I created a div with the createElement function and clone them with the cloneNode using loops.
 To calculate how much to clone to build the sketchpad. i calculated using square root(size of the sketchpad / size of each tile).
