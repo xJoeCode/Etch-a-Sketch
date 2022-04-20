@@ -7,7 +7,6 @@ function generate(){
     let intSkethpadSize = parseInt(sketchpadSize)
 
      if (inttileSize >= 10 && inttileSize <= 50 && intSkethpadSize >= 100 && intSkethpadSize <= 1000) {
-         console.log(typeof intSkethpadSize)
         tilegenerator()
         } else alert("Kindly check you input values and try again")
     
