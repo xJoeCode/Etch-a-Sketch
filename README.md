@@ -1,4 +1,4 @@
-https://xjoecode.github.io/Etch-a-Sketch/
+Live Preview: https://xjoecode.github.io/Etch-a-Sketch/
 
 This is my version of the Etch-a-Sketch project from the Odin Project. https://www.theodinproject.com/lessons/foundations-etch-a-sketch
 
